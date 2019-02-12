@@ -10,7 +10,8 @@ import subprocess
 from asciimatics.screen import Screen
 import os
 import sys
-import text_to_speech as tts
+import text_to_speech as ttss
+import googlettsdeneme as goo
 
 seviye = 0
 driver = webdriver.Chrome("/home/pi/Desktop/chromedriver")
@@ -28,14 +29,24 @@ for i in range(10):
         print(concl)
         concl = int(concl)
         seviye = concl-1
-        
-        if seviye == 1:
+       
+        if seviye == 3:
             emoji_window()
             
-        if seviye == 3:
-            tts.xterm()
+        if seviye == 2:
+            ttss.xterm()
             time.sleep(1)
-            tts.hello_user()   
+            ttss.hello_user()
+
+        if seviye == 1:
+            ttss.konus("You achieved a great deal. Now let's meet. My name is HERMES. What is your Name?")
+            tepki = goo.spech()
+            tepki1 = tepki.split(" ")
+            isim = "Hello " + tepki1[-1]
+            ttss.konus(isim)
+            
+
+        
     wait.until_not(EC.visibility_of_element_located((By.ID,'dialogDoneText')))
         
         

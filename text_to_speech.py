@@ -12,4 +12,8 @@ def hello_user():
 def xterm():
     os.system("xterm -e \" jackd -d alsa\"&")
 
+def konus(user_text):
+    call(["espeak","-s180","-ven+f4",user_text])
+
+
 
