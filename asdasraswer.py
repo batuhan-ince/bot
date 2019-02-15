@@ -19,9 +19,20 @@ driver = webdriver.Chrome("/home/pi/Desktop/chromedriver")
 driver.get("file:///home/pi/Desktop/blockly-games/tr/maze.html")
 wait = WebDriverWait(driver,216000)
 
-def emoji_window():
-    os.system("xterm -e \"python3 Terminal_style.py\"&")
-    time.sleep(25)
+def thumbs_up():
+    os.system("xterm -e \"python3 thumbs_up.py\"&")
+def happy():
+    os.system("xterm -e \"python3 happy.py\"&")
+def sad():
+    os.system("xterm -e \"python3 sad.py\"&")
+def hermes_text():
+    os.system("xterm -e \"python3 hermes_text.py\"&")
+def sad_to_happy():
+    os.system("xterm -e \"python3 sad_to_happy.py\"&")
+def sound():
+    os.system("xterm -e \"python3 sound.py\"&")
+    
+    
 etk.welkam()
 for i in range(10):
     wait.until(EC.visibility_of_element_located((By.ID,'dialogDoneText')))
@@ -32,7 +43,12 @@ for i in range(10):
         print(seviye)
 
         if seviye == '2.':
-            emoji_window()
+            happy()
+            sad_to_happy()
+            sound()
+            sad()
+            hermes_text()
+            thumbs_up()
             
         if seviye == '5.':
             #ttss.xterm()
